@@ -2,7 +2,7 @@
 
 import assert from 'assert';
 import sinon from 'sinon';
-import underTest from '../src/curry';
+import underTest from '../index';
 
 import {expect} from 'chai';
 
