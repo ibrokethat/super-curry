@@ -6,7 +6,7 @@
 ## Install
 
   ```
-  npm install @ibrokethat/super-curry
+  npm install @ibrokethat/curry
 
   ```
 
@@ -14,7 +14,7 @@
 ## Usage
 
   ```
-  import curry from '@ibrokethat/super-curry';
+  import curry from '@ibrokethat/curry';
 
   let args4 = (a, b, c, d) => a + b + c + d;
 

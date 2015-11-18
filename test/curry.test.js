@@ -1,10 +1,9 @@
 "use strict";
 
-import assert from 'assert';
-import sinon from 'sinon';
-import underTest from '../index';
+let sinon = require('sinon');
+let underTest = require('../index');
 
-import {expect} from 'chai';
+let expect = require('chai').expect;
 
 let fakes;
 let ctx;
@@ -21,7 +20,6 @@ describe("test curry module: ", () => {
 
 
   it('should curry a function which throws if called with no args', () => {
-
 
     let args2 = (a, b) => a + b;
 
@@ -172,7 +170,10 @@ describe("test curry module: ", () => {
   it('should curry a 4 arg function and still pass the ...args through', () => {
 
 
-    let args4 = (a, b, c, d, ...args) => a + b + c + d + args.length;
+    let args4 = (a, b, c, d, ...xargs) => {
+
+      return a + b + c + d + xargs.length;
+    }
 
     let fn = underTest(args4);
 

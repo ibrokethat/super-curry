@@ -1,6 +1,6 @@
 'use strict';
 
-export default function curry (fn) {
+module.exports = function curry (fn) {
 
   return _curry(fn.length, fn);
 }
@@ -8,7 +8,7 @@ export default function curry (fn) {
 
 function _curry (length, fn) {
 
-  return (...args) => {
+  return  (...args) => {
 
     if (args.length === 0) {
 

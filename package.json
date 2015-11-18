@@ -1,15 +1,24 @@
 {
   "name": "@ibrokethat/curry",
   "description": "super curry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "si@ibrokethat.com",
   "contributors": [
-    { "name": "Simon Jefford", "email": "si@ibrokethat.com" }
+    {
+      "name": "Simon Jefford",
+      "email": "si@ibrokethat.com"
+    }
   ],
   "dependencies": {
-    "babel": "5.0.x"
+    "babel": "^6.1.18",
+    "babel-cli": "^6.1.18",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.1.18",
+    "babel-plugin-transform-es2015-destructuring": "^6.1.18",
+    "babel-plugin-transform-es2015-parameters": "^6.1.18",
+    "babel-plugin-transform-es2015-spread": "^6.1.18"
   },
   "devDependencies": {
+    "babel-core": "^6.1.21",
     "chai": "latest",
     "mocha": "latest",
     "sinon": "latest"
@@ -25,14 +34,14 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "build":"./node_modules/.bin/babel ./*.js --out-dir lib --source-maps" ,
-    "build-watch":"./node_modules/.bin/babel ./*.js --out-dir lib --source-maps -w" ,
-    "prepublish" : "npm prune",
-    "postinstall" : "npm run build",
-    "test": "./node_modules/.bin/mocha --compilers js:babel/register --harmony --colors --recursive -R spec --ui bdd ./test/**/*.test.js --NODE_ENV=test"
+    "build": "./node_modules/.bin/babel ./*.js --out-dir lib --source-maps",
+    "build-watch": "./node_modules/.bin/babel ./*.js --out-dir lib --source-maps -w",
+    "prepublish": "npm prune",
+    "postinstall": "npm run build",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --harmony --colors --recursive -R spec --ui bdd ./test/**/*.test.js --NODE_ENV=test"
   },
-  "engines" : {
-    "iojs" : ">=1.x.x",
-    "node" : ">=0.12.x"
+  "engines": {
+    "iojs": ">=1.x.x",
+    "node": ">=0.12.x"
   }
 }
